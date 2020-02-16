@@ -1,5 +1,3 @@
-import { AuthProvider } from 'ngx-auth-firebaseui';
-
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,6 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  providers = AuthProvider;
-  title = 'table-soccer-frontend';
 }

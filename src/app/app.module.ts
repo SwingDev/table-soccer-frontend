@@ -1,12 +1,14 @@
 import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 
 import { NgModule } from '@angular/core';
-import { MatCardModule, MatToolbarModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthModule } from './auth/auth.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatCardModule,
+    AuthModule,
+    DashboardModule,
     NgxAuthFirebaseUIModule.forRoot({
       apiKey: 'AIzaSyBMtiqBynHcurfSncZ5CSolDkNao5508KA',
       authDomain: 'table-soccer-d5bed.firebaseapp.com',
@@ -32,8 +35,8 @@ import { AppComponent } from './app.component';
       enableFirestoreSync: true, // enable/disable autosync users with firestore
       toastMessageOnAuthSuccess: true, // whether to open/show a snackbar message on auth success - default : true
       toastMessageOnAuthError: true, // whether to open/show a snackbar message on auth error - default : true
-      authGuardFallbackURL: '/loggedout', // url for unauthenticated users - to use in combination with canActivate feature on a route
-      authGuardLoggedInURL: '/loggedin', // url for authenticated users - to use in combination with canActivate feature on a route
+      authGuardFallbackURL: '/login', // url for unauthenticated users - to use in combination with canActivate feature on a route
+      authGuardLoggedInURL: '/', // url for authenticated users - to use in combination with canActivate feature on a route
       passwordMaxLength: 60, // `min/max` input parameters in components should be within this range.
       passwordMinLength: 8, // Password length min/max in forms independently of each componenet min/max.
       // Same as password but for the name
