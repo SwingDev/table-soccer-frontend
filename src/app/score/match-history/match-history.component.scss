@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  padding: 24px;
+}
+
+.match {
+  display: flex;
+  margin: 8px 0;
+
+  .result {
+    display: flex;
+    margin: 0 24px;
+    font-size: 18px;
+  }
+
+  .time {
+    margin-left: 24px;
+  }
+}

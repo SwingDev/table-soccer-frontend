@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  padding: 24px;
+}
+
+.user-bar {
+  display: flex;
+  padding: 8px;
+  margin: 4px;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+
+  .name {
+
+  }
+
+  .avatar {
+    padding-right: 12px;
+
+    img {
+      width: 24px;
+      height: 24px;
+      border-radius: 12px;
+    }
+  }
+
+  .score {
+    font-weight: bold;
+    margin-left: 24px;
+  }
+}

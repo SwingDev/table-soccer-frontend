@@ -1,1 +1,16 @@
-<p>match-history works!</p>
+<h2>Match history</h2>
+<div
+  class="match-list"
+  *ngFor="let match of matches"
+>
+  <div class="match">
+    <div class="user winner">{{match.winner.name}}</div>
+    <div class="result">
+      <div class="winner">10</div>
+      <div>:</div>
+      <div class="loser">{{match.loserScore}}</div>
+    </div>
+    <div class="user loser">{{match.loser.name}}</div>
+    <div class="time">{{match.timestamp | date}}</div>
+  </div>
+</div>

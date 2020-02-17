@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ScoreService } from '../score.service';
+import { Match } from '../match';
 
 @Component({
   selector: 'app-match-history',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatchHistoryComponent implements OnInit {
 
-  constructor() { }
+  matches: Match[] = [];
+
+  constructor(private readonly scoreService: ScoreService) {
+  }
 
   ngOnInit() {
+    this.scoreService.matchHistory().subscribe((matches: Match[]) => {
+      this.matches = matches;
+    });
   }
 
 }
