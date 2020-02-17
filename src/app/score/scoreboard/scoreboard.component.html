@@ -2,4 +2,14 @@
 <div
   class="scoreboard-entry"
   *ngFor="let scoreboardEntry of scoreboardEntries"
->{{scoreboardEntry | json}}</div>
+>
+
+  <div class="user-bar">
+    <div
+      class="avatar"
+      *ngIf="scoreboardEntry && scoreboardEntry.avatar"
+    ><img [src]="scoreboardEntry.avatar"></div>
+    <div class="name" *ngIf="scoreboardEntry">{{scoreboardEntry.name}}</div>
+    <div class="score" *ngIf="scoreboardEntry">{{scoreboardEntry.score}}</div>
+  </div>
+</div>

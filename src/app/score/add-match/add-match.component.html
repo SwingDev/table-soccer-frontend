@@ -1,1 +1,43 @@
-<p>add-match works!</p>
+<h2>Add match</h2>
+<div class="add-match">
+  <div class="score-container">
+    <div
+      class="user winner"
+    >
+      <div class="title">Winner</div>
+      <div class="user-bar" *ngIf="me">{{me.name}}</div>
+    </div>
+    <div
+      class="result"
+    >
+      <input value="10" readonly>
+      <input [(ngModel)]="loserScore" (keyup)="onKeyUp();">
+    </div>
+    <div
+      class="user loser"
+    >
+      <div class="title">Loser</div>
+      <div class="user-bar" *ngIf="loser">{{loser.name}}</div>
+      <div class="user-bar" *ngIf="!loser">???</div>
+    </div>
+  </div>
+  <div class="loser-picker">
+    <div
+      class="loser"
+      *ngFor="let loserToPick of losersToPick"
+      (click)="pickLoser(loserToPick);"
+    >
+      <div class="user-bar">
+        <div
+          class="avatar"
+          *ngIf="loserToPick && loserToPick.avatar"
+        ><img [src]="loserToPick.avatar"></div>
+        <div class="name" *ngIf="loserToPick">{{loserToPick.name}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="validation-message" *ngIf="validationMessage">{{validationMessage}}</div>
+  <div class="controls" *ngIf="loser">
+    <button (click)="onSubmitClick();">Submit match</button>
+  </div>
+</div>

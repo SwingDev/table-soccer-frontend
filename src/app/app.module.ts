@@ -15,6 +15,7 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { AuthHttpInterceptor } from './core/auth.http-interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 export function appNameFactory() {
   return 'table-soccer-frontend';
@@ -35,6 +36,7 @@ export function appNameFactory() {
     DashboardModule,
     ScoreModule,
     UserModule,
+    FormsModule,
     NgxAuthFirebaseUIModule.forRoot({
       apiKey: 'AIzaSyBMtiqBynHcurfSncZ5CSolDkNao5508KA',
       authDomain: 'table-soccer-d5bed.firebaseapp.com',
@@ -57,7 +59,7 @@ export function appNameFactory() {
       nameMaxLength: 50,
       nameMinLength: 2,
       // If set, sign-in/up form is not available until email has been verified.
-      // Plus protected routes are still protected even though user is connected.
+      // Plus protected routes are still protected even though me is connected.
       guardProtectedRoutesUntilEmailIsVerified: true,
       enableEmailVerification: false, // default: true
     })

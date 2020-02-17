@@ -21,6 +21,6 @@ export class ScoreService {
   }
 
   public sendScore(score: Score) {
-    return this.http.post(`${environment.apiUrl}/scoreboard`, score);
+    return this.http.post(`${environment.apiUrl}/score`, score);
   }
 }

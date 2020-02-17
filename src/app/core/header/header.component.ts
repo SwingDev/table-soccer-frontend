@@ -12,11 +12,11 @@ export class HeaderComponent implements OnInit {
 
   user: User;
 
-  constructor(private router: Router, private readonly userService: UserService) {
+  constructor(private readonly router: Router, private readonly userService: UserService) {
   }
 
   ngOnInit() {
-    this.userService.user().subscribe({
+    this.userService.me().subscribe({
       next: (user: User) => {
         this.user = user;
         if (user) {

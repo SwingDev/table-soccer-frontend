@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { AddMatchComponent } from './add-match/add-match.component';
 import { MatchHistoryComponent } from './match-history/match-history.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [ScoreboardComponent, AddMatchComponent, MatchHistoryComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     ScoreboardComponent

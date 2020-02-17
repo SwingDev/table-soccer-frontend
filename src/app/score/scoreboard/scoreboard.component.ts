@@ -16,9 +16,11 @@ export class ScoreboardComponent implements OnInit {
   ngOnInit() {
     this.scoreService.scoreboard().subscribe({
       next: (scoreboardEntries: ScoreboardEntry[]) => {
-        // this.scoreboardEntries = scoreboardEntries;
+        this.scoreboardEntries = scoreboardEntries;
       },
-      error: () => {}
+      error: (e) => {
+        console.error(e);
+      }
     });
   }
 
