@@ -9,6 +9,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { ScoreModule } from './score/score.module';
+import { UserModule } from './user/user.module';
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
+import { AuthHttpInterceptor } from './core/auth.http-interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
+export function appNameFactory() {
+  return 'table-soccer-frontend';
+}
 
 @NgModule({
   declarations: [
@@ -20,7 +30,11 @@ import { DashboardModule } from './dashboard/dashboard.module';
     BrowserAnimationsModule,
     MatToolbarModule,
     AuthModule,
+    CoreModule,
+    SharedModule,
     DashboardModule,
+    ScoreModule,
+    UserModule,
     NgxAuthFirebaseUIModule.forRoot({
       apiKey: 'AIzaSyBMtiqBynHcurfSncZ5CSolDkNao5508KA',
       authDomain: 'table-soccer-d5bed.firebaseapp.com',
@@ -30,7 +44,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
       messagingSenderId: '273036208473',
       appId: '1:273036208473:web:35ec8cb1ca387fb7f40448'
     },
-    () => 'table-soccer-frontend',
+      appNameFactory,
     {
       enableFirestoreSync: true, // enable/disable autosync users with firestore
       toastMessageOnAuthSuccess: true, // whether to open/show a snackbar message on auth success - default : true
@@ -48,7 +62,13 @@ import { DashboardModule } from './dashboard/dashboard.module';
       enableEmailVerification: false, // default: true
     })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthHttpInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
