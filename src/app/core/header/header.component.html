@@ -1,8 +1,15 @@
 <h1>Table Soccer</h1>
-<div class="user-panel">
+<div class="menu">
+  <div [routerLink]="'add-match'">Add match</div>
+  <div [routerLink]="''">Scoreboard</div>
+  <div [routerLink]="'match-history'">Match history</div>
+</div>
+<div
+  class="user-panel"
+>
   <div
     class="avatar"
-    *ngIf="user.avatar "
+    *ngIf="user && user.avatar"
   ><img [src]="user.avatar"></div>
-  <div class="name">{{user.name}}</div>
+  <div class="name" *ngIf="user">{{user.name}}</div>
 </div>

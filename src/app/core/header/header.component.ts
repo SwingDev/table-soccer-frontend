@@ -16,22 +16,19 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.userService.user().subscribe({
-        next: (user: User) => {
-          console.log(user);
-          this.user = user;
-          if (user) {
-            this.router.navigateByUrl('/');
-          } else {
-            this.router.navigateByUrl('/login');
-          }
-        },
-        error: (e) => {
-          console.log(e);
+    this.userService.user().subscribe({
+      next: (user: User) => {
+        this.user = user;
+        if (user) {
+          this.router.navigateByUrl('/');
+        } else {
+          this.router.navigateByUrl('/login');
         }
-      });
-    }, 2000);
+      },
+      error: (e) => {
+        console.error(e);
+      }
+    });
   }
 
 }

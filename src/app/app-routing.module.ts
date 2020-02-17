@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddMatchComponent } from './score/add-match/add-match.component';
+import { MatchHistoryComponent } from './score/match-history/match-history.component';
 
 const routes: Routes = [
   {
@@ -15,6 +17,17 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: DashboardComponent,
+    canActivate: [LoggedInGuard]
+  },
+  {
+    path: 'add-match',
+    component: AddMatchComponent,
+    canActivate: [LoggedInGuard]
+  },
+  {
+    path: 'match-history',
+    pathMatch: 'full',
+    component: MatchHistoryComponent,
     canActivate: [LoggedInGuard]
   },
   {
