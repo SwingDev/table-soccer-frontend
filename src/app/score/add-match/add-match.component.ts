@@ -47,7 +47,7 @@ export class AddMatchComponent implements OnInit {
         winner: this.me.firebaseId,
         loser: this.loser.firebaseId,
         loserScore: score,
-        timestamp: Date.now()
+        timestamp: Math.floor(Date.now() / 1000) // we want timestamp in seconds
       }).subscribe(() => {
         this.router.navigateByUrl('/match-history');
       });

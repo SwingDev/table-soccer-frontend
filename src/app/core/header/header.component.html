@@ -1,15 +1,24 @@
 <h1>Table Soccer</h1>
-<div class="menu">
-  <div [routerLink]="'add-match'">Add match</div>
-  <div [routerLink]="''">Scoreboard</div>
-  <div [routerLink]="'match-history'">Match history</div>
-</div>
-<div
-  class="user-panel"
->
+<div>
   <div
-    class="avatar"
-    *ngIf="user && user.avatar"
-  ><img [src]="user.avatar"></div>
-  <div class="name" *ngIf="user">{{user.name}}</div>
+    class="menu"
+    *ngIf="user"
+  >
+    <div [routerLink]="'add-match'">Add match</div>
+    <div [routerLink]="'scoreboard'">Scoreboard</div>
+    <div [routerLink]="'match-history'">Match history</div>
+  </div>
+</div>
+<div>
+  <div
+    class="user-panel"
+    *ngIf="user"
+  >
+    <div
+      class="avatar"
+      *ngIf="user.avatar"
+    ><img [src]="user.avatar"></div>
+    <div class="name">{{user.name}}</div>
+    <button (click)="onLogoutClick()">Log out</button>
+  </div>
 </div>

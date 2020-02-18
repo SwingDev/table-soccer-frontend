@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../user/user';
 import { UserService } from '../../user/user.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,11 @@ export class HeaderComponent implements OnInit {
 
   user: User;
 
-  constructor(private readonly router: Router, private readonly userService: UserService) {
+  constructor(
+    private readonly router: Router,
+    private readonly userService: UserService,
+    private readonly authService: AuthService
+  ) {
   }
 
   ngOnInit() {
@@ -29,6 +34,10 @@ export class HeaderComponent implements OnInit {
         console.error(e);
       }
     });
+  }
+
+  public onLogoutClick() {
+    this.authService.logout();
   }
 
 }

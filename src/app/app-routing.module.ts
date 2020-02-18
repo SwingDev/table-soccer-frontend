@@ -10,17 +10,19 @@ import { MatchHistoryComponent } from './score/match-history/match-history.compo
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: '',
+    pathMatch: 'full',
     component: LoginComponent,
   },
   {
-    path: '',
+    path: 'scoreboard',
     pathMatch: 'full',
     component: DashboardComponent,
     canActivate: [LoggedInGuard]
   },
   {
     path: 'add-match',
+    pathMatch: 'full',
     component: AddMatchComponent,
     canActivate: [LoggedInGuard]
   },

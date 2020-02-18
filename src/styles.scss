@@ -16,3 +16,11 @@ body {
   color: $font-color;
 }
 
+button {
+  background: $color-primary-dark;
+  color: #fff;
+  font-size: 14px;
+  border: 0 none;
+  cursor: pointer;
+  padding: 6px;
+}

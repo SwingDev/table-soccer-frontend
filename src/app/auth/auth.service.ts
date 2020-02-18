@@ -17,12 +17,19 @@ export class AuthService {
   public auth() {
     this.firebaseAuth.user.subscribe({
       next: async (user) => {
-        const token = await user.getIdToken();
-        this.token$.next(token);
+        if (user) {
+          const token = await user.getIdToken();
+          this.token$.next(token);
+        } else {
+          this.token$.next(null);
+        }
       },
       error: () => {
         this.token$.next(null);
-      }
+      },
+      complete: () => {
+        console.log('complete');
+      },
     });
   }
 
@@ -31,5 +38,11 @@ export class AuthService {
     return this.token$.asObservable().pipe(
       filter((token: string) => token !== undefined && token != null)
     );
+  }
+
+  public logout() {
+    this.firebaseAuth.auth.signOut().then(() => {
+      console.log('Logged out!');
+    });
   }
 }
