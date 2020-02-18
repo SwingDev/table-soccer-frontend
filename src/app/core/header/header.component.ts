@@ -23,11 +23,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.userService.me().subscribe({
       next: (user: User) => {
+        console.log('user', user);
         this.user = user;
         if (user) {
-          this.router.navigateByUrl('/');
+          this.router.navigateByUrl('/scoreboard');
         } else {
-          this.router.navigateByUrl('/login');
+          this.router.navigateByUrl('/');
         }
       },
       error: (e) => {
