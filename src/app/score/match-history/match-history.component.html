@@ -11,6 +11,6 @@
       <div class="loser">{{match.loserScore}}</div>
     </div>
     <div class="user loser">{{match.loser.name}}</div>
-    <div class="time">{{match.timestamp | date}}</div>
+    <div class="time">{{(match.timestamp * 1000) | date}}</div>
   </div>
 </div>

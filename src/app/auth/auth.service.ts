@@ -43,6 +43,7 @@ export class AuthService {
   public logout() {
     this.firebaseAuth.auth.signOut().then(() => {
       console.log('Logged out!');
+      // @ts-ignore
       window.location = '';
     });
   }
