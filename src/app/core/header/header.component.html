@@ -1,4 +1,10 @@
-<h1>Table Soccer</h1>
+<h1
+  (mouseenter)="onIconMouseEnter();"
+  (mouseleave)="onIconMouseLeave();"
+><fa-icon
+  [icon]="faFutbol"
+  [ngClass]="{'fa-spin': spinIcon}"
+></fa-icon> Table Soccer</h1>
 <div>
   <div
     class="menu"

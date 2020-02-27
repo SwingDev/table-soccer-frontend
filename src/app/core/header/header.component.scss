@@ -10,9 +10,16 @@
 }
 
 h1 {
+  display: flex;
+  align-items: center;
   font-size: 24px;
   padding: 12px;
   margin: 0;
+
+  fa-icon {
+    font-size: 40px;
+    margin-right: 16px;
+  }
 }
 
 .menu {

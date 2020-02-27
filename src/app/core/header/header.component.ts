@@ -4,6 +4,8 @@ import { UserService } from '../../user/user.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
 
+import { faFutbol } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,7 +13,10 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
+  faFutbol = faFutbol;
+
   user: User;
+  spinIcon = false;
 
   constructor(
     private readonly router: Router,
@@ -36,8 +41,16 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  public onLogoutClick() {
+  onLogoutClick() {
     this.authService.logout();
+  }
+
+  onIconMouseEnter() {
+    this.spinIcon = true;
+  }
+
+  onIconMouseLeave() {
+    this.spinIcon = false;
   }
 
 }
