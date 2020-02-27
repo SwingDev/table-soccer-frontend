@@ -4,9 +4,9 @@
     class="menu"
     *ngIf="user"
   >
-    <div [routerLink]="'add-match'">Add match</div>
-    <div [routerLink]="'scoreboard'">Scoreboard</div>
-    <div [routerLink]="'match-history'">Match history</div>
+    <div [routerLink]="'add-match'" [routerLinkActive]="'active'">Add match</div>
+    <div [routerLink]="'scoreboard'" [routerLinkActive]="'active'">Scoreboard</div>
+    <div [routerLink]="'match-history'" [routerLinkActive]="'active'">Match history</div>
   </div>
 </div>
 <div>

@@ -23,6 +23,11 @@ h1 {
     margin:0 6px;
     padding: 4px;
     cursor: pointer;
+    outline: 0 none;
+
+    &:hover, &.active {
+      color: darken(#fff, 20%);
+    }
   }
 }
 
