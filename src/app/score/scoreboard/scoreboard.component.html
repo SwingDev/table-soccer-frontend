@@ -1,15 +1,15 @@
 <h2>Scoreboard</h2>
 <div
   class="scoreboard-entry"
-  *ngFor="let scoreboardEntry of scoreboardEntries"
+  *ngFor="let scoreboardEntry of scoreboardEntries; let i = index"
 >
-
+  <div class="index">{{i + 1}}</div>
   <div class="user-bar">
     <div
       class="avatar"
       *ngIf="scoreboardEntry && scoreboardEntry.avatar"
     ><img [src]="scoreboardEntry.avatar"></div>
     <div class="name" *ngIf="scoreboardEntry">{{scoreboardEntry.name}}</div>
-    <div class="score" *ngIf="scoreboardEntry">{{scoreboardEntry.score}}</div>
   </div>
+  <div class="score" *ngIf="scoreboardEntry">{{scoreboardEntry.score | round}}</div>
 </div>

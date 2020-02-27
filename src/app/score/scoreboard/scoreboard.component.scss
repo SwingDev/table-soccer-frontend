@@ -3,25 +3,35 @@
   padding: 24px;
 }
 
-.user-bar {
+.scoreboard-entry {
   display: flex;
-  padding: 8px;
-  margin: 4px;
-  align-items: center;
-  cursor: pointer;
   font-size: 18px;
+  height: 24px;
+  margin-bottom: 16px;
 
-  .name {
-
+  .index {
+    font-weight: bold;
+    margin-right: 24px;
   }
 
-  .avatar {
-    padding-right: 12px;
+  .user-bar {
+    display: flex;
+    width: 200px;
 
-    img {
-      width: 24px;
-      height: 24px;
-      border-radius: 12px;
+    .name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .avatar {
+      padding-right: 12px;
+
+      img {
+        width: 24px;
+        height: 24px;
+        border-radius: 12px;
+      }
     }
   }
 
@@ -30,3 +40,4 @@
     margin-left: 24px;
   }
 }
+

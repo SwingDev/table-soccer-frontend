@@ -23,7 +23,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.userService.me().subscribe({
       next: (user: User) => {
-        console.log('user', user);
         this.user = user;
         if (user) {
           this.router.navigateByUrl('/scoreboard');
