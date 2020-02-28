@@ -13,6 +13,7 @@ import { ScoreModule } from './score/score.module';
 import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
+import { StatisticsModule } from './statistics/statistics.module';
 import { AuthHttpInterceptor } from './core/auth.http-interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -36,6 +37,7 @@ export function appNameFactory() {
     DashboardModule,
     ScoreModule,
     UserModule,
+    StatisticsModule,
     FormsModule,
     NgxAuthFirebaseUIModule.forRoot({
       apiKey: 'AIzaSyBMtiqBynHcurfSncZ5CSolDkNao5508KA',

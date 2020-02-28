@@ -7,6 +7,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddMatchComponent } from './score/add-match/add-match.component';
 import { MatchHistoryComponent } from './score/match-history/match-history.component';
+import { StatisticsComponent } from './statistics/statistics/statistics.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,12 @@ const routes: Routes = [
     canActivate: [LoggedInGuard]
   },
   {
+    path: 'statistics',
+    pathMatch: 'full',
+    component: StatisticsComponent,
+    canActivate: [LoggedInGuard]
+  },
+  {
     path: '**',
     redirectTo: '/'
   }
@@ -42,4 +49,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
