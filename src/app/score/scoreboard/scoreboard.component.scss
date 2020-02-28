@@ -1,3 +1,5 @@
+@import "../../../shared";
+
 :host {
   display: block;
   padding: 24px;
@@ -6,38 +8,24 @@
 .scoreboard-entry {
   display: flex;
   font-size: 18px;
-  height: 24px;
   margin-bottom: 16px;
 
   .index {
-    font-weight: bold;
+    font-weight: $font-weight-bold;
     margin-right: 24px;
+    align-items: center;
+    display: flex;
   }
 
-  .user-bar {
-    display: flex;
+  app-user-bar {
     width: 200px;
-
-    .name {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .avatar {
-      padding-right: 12px;
-
-      img {
-        width: 24px;
-        height: 24px;
-        border-radius: 12px;
-      }
-    }
   }
 
   .score {
-    font-weight: bold;
+    font-weight: $font-weight-bold;
     margin-left: 24px;
+    align-items: center;
+    display: flex;
   }
 }
 

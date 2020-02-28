@@ -1,11 +1,7 @@
-<h1
-  (mouseenter)="onIconMouseEnter();"
-  (mouseleave)="onIconMouseLeave();"
-><fa-icon
-  [icon]="faFutbol"
-  [ngClass]="{'fa-spin': spinIcon}"
-></fa-icon> Table Soccer</h1>
-<div>
+<div class="left">
+  <h1><fa-icon [icon]="faFutbol"></fa-icon> Table Soccer</h1>
+</div>
+<div class="center">
   <div
     class="menu"
     *ngIf="user"
@@ -15,16 +11,12 @@
     <div [routerLink]="'match-history'" [routerLinkActive]="'active'">Match history</div>
   </div>
 </div>
-<div>
+<div class="right">
   <div
     class="user-panel"
     *ngIf="user"
   >
-    <div
-      class="avatar"
-      *ngIf="user.avatar"
-    ><img [src]="user.avatar"></div>
-    <div class="name">{{user.name}}</div>
+    <app-user-bar [user]="user"></app-user-bar>
     <button (click)="onLogoutClick()">Log out</button>
   </div>
 </div>

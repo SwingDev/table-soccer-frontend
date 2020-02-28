@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
   faFutbol = faFutbol;
 
   user: User;
-  spinIcon = false;
 
   constructor(
     private readonly router: Router,
@@ -43,14 +42,6 @@ export class HeaderComponent implements OnInit {
 
   onLogoutClick() {
     this.authService.logout();
-  }
-
-  onIconMouseEnter() {
-    this.spinIcon = true;
-  }
-
-  onIconMouseLeave() {
-    this.spinIcon = false;
   }
 
 }

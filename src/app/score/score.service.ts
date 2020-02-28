@@ -35,8 +35,8 @@ export class ScoreService {
           map((users: User[]) => {
             return scores.map((score: Score) => {
               return {
-                winner: users.find((u: User) => u.firebaseId == score.winner),
-                loser: users.find((u: User) => u.firebaseId == score.loser),
+                winner: users.find((u: User) => u.firebaseId === score.winner),
+                loser: users.find((u: User) => u.firebaseId === score.loser),
                 loserScore: score.loserScore,
                 timestamp: score.timestamp
               };

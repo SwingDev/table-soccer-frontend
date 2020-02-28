@@ -1,3 +1,5 @@
+@import "../../../shared";
+
 :host {
   display: block;
   padding: 24px;
@@ -18,44 +20,37 @@
 
       .title {
         font-size: 18px;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
+        margin-bottom: 8px;
       }
     }
 
     .result {
-      margin: 0 24px;
+      display: flex;
+      align-items: flex-end;
+      margin: 0 32px;
     }
   }
 }
 
 .loser-picker {
+  margin: 32px 0;
+
+  .title {
+    font-size: 18px;
+    font-weight: $font-weight-bold;
+    margin-bottom: 8px;
+  }
+
   .loser {
-    .user-bar {
-      display: flex;
-      border: 1px solid #eee;
-      padding: 8px;
-      margin: 4px;
-      align-items: center;
-      background: #fff;
-      cursor: pointer;
+    border: 1px solid #eee;
+    padding: 8px;
+    margin: 4px;
+    background: #fff;
+    cursor: pointer;
 
-      .name {
-
-      }
-
-      .avatar {
-        padding-right: 12px;
-
-        img {
-          width: 24px;
-          height: 24px;
-          border-radius: 12px;
-        }
-      }
-
-      &:hover {
-        background: #eee;
-      }
+    &:hover {
+      background: #eee;
     }
   }
 }

@@ -4,13 +4,17 @@
   *ngFor="let match of matches"
 >
   <div class="match">
-    <div class="user winner">{{match.winner.name}}</div>
+    <div class="user winner">
+      <app-user-bar [user]="match.winner"></app-user-bar>
+    </div>
     <div class="result">
       <div class="winner">10</div>
       <div>:</div>
       <div class="loser">{{match.loserScore}}</div>
     </div>
-    <div class="user loser">{{match.loser.name}}</div>
+    <div class="user loser">
+      <app-user-bar [user]="match.loser"></app-user-bar>
+    </div>
     <div class="time">{{(match.timestamp * 1000) | date}}</div>
   </div>
 </div>
